@@ -1,0 +1,26 @@
+{% extends 'homesapp/base.html' %}
+<html>
+    <head></head>
+        {% block body %}
+        <body>
+            <div class="container">
+                <div class="container">
+                    <div class="jumbotron">
+                        <h1>Property Areana</h1>
+                        <p>Find the Best Properties across all locations</p>
+                    </div>
+            </div>
+
+            <centre><h1>Select your locations</h1></centre>
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Locations</div>
+                    {% for location in object_list %}
+                    <div class="panel-body"><a href="/homesapp/{{location.id}}">{{location.location_name}}</a></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </body>
+        {% endblock %}
+</html>>
+

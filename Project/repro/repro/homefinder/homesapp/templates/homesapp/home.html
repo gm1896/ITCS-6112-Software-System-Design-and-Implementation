@@ -1,0 +1,23 @@
+{% extends 'homesapp/base2.html' %}
+{% load static %}
+<html>
+    <head></head>
+        {% block body %}
+        <body>
+            <div class="container">
+                <div class="container">
+                    <div class="jumbotron">
+                        <center><h1>Property Arena</h1></center>
+                    </div>
+            </div>
+                <center><h1>Signup into the Property Arena </h1></center>
+                <center><a href="/homesapp/signup" style="background-color:white; display:inline-block; padding: 15px 32px; border: solid black 1px;">Signup</a></center>
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+                <center><h1>Login to the Property Arena </h1></center>
+                <center><a href="/homesapp/login" style="background-color:white; display:inline-block; padding: 15px 32px; border: solid black 1px;">Login</a></center>
+        </body>
+        {% endblock %}
+</html>

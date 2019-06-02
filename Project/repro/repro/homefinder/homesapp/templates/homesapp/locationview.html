@@ -1,0 +1,58 @@
+{% extends 'homesapp/base.html' %}
+
+{% block body  %}
+
+<html>
+    <head></head>
+    <body>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-8">
+            <h1>Properties in {{location.location_name}}</h1>
+            <div class ="panel-group">
+                {% for place in location.property_set.all %}
+                <div class ="panel panel-primary">
+                    <div class="panel-heading">{{place.property_name}}</div>
+                    <div class="panel-body">
+                        <div class="col-md-4">
+                            <img src="{{place.image_url}}" height="200" width="200">
+                        </div>
+                        <div class="col-md-6">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td><label><b>Area SQFT</b></label></td>
+                                        <td>{{place.area}}</td>
+                                    </tr>
+                                    <tr>
+                                            <td><label><b>Price</b></label></td>
+                                            <td>{{place.price}}</td>
+                                    </tr>
+                                    <tr>
+                                            <td><label><b>No of Floors</b></label></td>
+                                            <td>{{place.floor}}</td>
+                                    </tr>
+                                    <tr>
+                                            <td><label><b>Address</b></label></td>
+                                            <td>{{place.postaladd}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>   
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td><a class="btn btn-sucess" href="/homesapp/{{location.id}}/{{place.id}}" style="background-color:white; display:inline-block; padding: 15px 32px; border: solid black 1px;">View Details</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </body>
+</html>
+
+{% endblock %}
